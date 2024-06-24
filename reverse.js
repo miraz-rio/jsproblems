@@ -7,6 +7,6 @@ function reverseString(str) {
     return reverse;
 }
 
-var statement = "I am a professional Graphic Designer and compassionate about my work.";
+var statement = "I am a professional Graphic Designer.";
 var forText = reverseString(statement);
 console.log(forText);
