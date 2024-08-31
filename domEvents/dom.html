@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exploring Dom</title>
+    <style>
+      article {
+        border: 2px solid tomato;
+        border-radius: 20px;
+        margin: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3 title="Important author" id="bestseller">Exploring Dom</h3>
+    <p id="first">Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <article id="first-article">
+      <h3>Article-1</h3>
+      <p class="author">Mamun</p>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus,
+        corrupti.
+      </p>
+    </article>
+
+    <article>
+      <h3 class="special">Article-1</h3>
+      <p class="author">Mamun</p>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus,
+        corrupti.
+      </p>
+    </article>
+
+    <article>
+      <h3>Grocery List</h3>
+      <ul id="gift-list">
+        <li>Gift item -1</li>
+        <li>Gift item -2</li>
+        <li>Gift item -3</li>
+        <li>Gift item -4</li>
+        <li>Gift item -5</li>
+      </ul>
+    </article>
+
+    <script>
+      var first = document.getElementById("first");
+      first.style.backgroundColor = "yellow";
+      first.style.color = "green";
+      first.style.fontSize = "20px";
+
+      const article = document.getElementById("first-article");
+      const newParagraph = document.createElement("p");
+      newParagraph.innerHTML = "This is added by Js";
+      article.appendChild(newParagraph);
+
+      var author = document.querySelectorAll(".special");
+      for (var i = 0; i < author.length; i++) {
+        var element = author[i];
+        element.innerHTML = "Lekhok-" + (i + 1);
+        element.setAttribute("title", "All authors are the same");
+      }
+      document
+        .getElementById("bestseller")
+        .setAttribute("title", "Give me your autograph");
+
+      // add one more gift
+      const ul = document.getElementById("gift-list");
+      const li = document.createElement("li");
+      li.innerHTML = "Brand new Gift";
+      ul.appendChild(li);
+    </script>
+  </body>
+</html>
